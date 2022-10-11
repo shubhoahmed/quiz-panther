@@ -6,7 +6,6 @@ const QuizList = () => {
     const quizes = useLoaderData();
     const { data } = quizes;
     const { questions, name } = data;
-    console.log(data);
     return (
         <div>
             <h1 className='text-center font-bold text-xl my-4'>Quiz for {name}</h1>

@@ -5,14 +5,15 @@ import { toast } from 'react-toastify';
 const Quiz = ({ quiz }) => {
     const [showAnswer, setShowAnswer] = useState(false);
     const { question, options, correctAnswer } = quiz;
-    const handleAnswer = (option, e) => {
+    const handleAnswer = (option) => {
+
         if (option === correctAnswer) {
             toast.success('You are selected right answer');
         }
         else {
             toast.error('You are selected wrong answer');
         }
-        e.stopImmediatePropagation();
+
     }
 
 
@@ -34,10 +35,11 @@ const Quiz = ({ quiz }) => {
             </div>
             <div className=' grid lg:grid-cols-1 grid-cols-1  gap-5 mt-5'>
                 {
-                    options.map((option, i) => <div key={i} className={`px-3 py-2 rounded-md  ${option === correctAnswer && showAnswer ? 'bg-green-500' : 'bg-blue-300'} w-full`} >
-                        <div>
-                            <label onClick={(e) => handleAnswer(option, e)} htmlFor={question + i} ><input type="radio" name={question} id={question + i} /> {option}
-                            </label>
+                    options.map((option, i) => <div key={i} className={` rounded-md  ${option === correctAnswer && showAnswer ? 'bg-green-500' : 'bg-blue-300'} w-full`} >
+                        <div className='flex gap-3 px-3 py-2'>
+                            <input value={option} onClick={() => handleAnswer(option)} type="radio" name={question} id={question + i} />
+                            <label className='inline-block w-full' htmlFor={question + i} >{option} </label>
+
                         </div>
                     </div>)
                 }
