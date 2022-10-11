@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
-import QuizOption from '../QuizOption/QuizOption';
+import { toast } from 'react-toastify';
+
 
 const Quiz = ({ quiz }) => {
     const [showAnswer, setShowAnswer] = useState(false);
-    const { question, options, correctAnswer, id
-    } = quiz;
+    const { question, options, correctAnswer } = quiz;
+    const handleAnswer = (option) => {
+        if (option === correctAnswer) {
+            toast.success('You are selected right answer');
+        }
+        else {
+            toast.error('You are selected wrong answer');
+        }
+    }
     return (
         <div className='p-5 border rounded-md lg:w-[60%] mx-auto  mb-5'>
 
@@ -24,7 +32,7 @@ const Quiz = ({ quiz }) => {
             <div className=' grid lg:grid-cols-1 grid-cols-1 gap-5 mt-5'>
                 {
                     options.map((option, i) => <div key={i} className={`px-3 py-2 rounded-md  ${option === correctAnswer && showAnswer ? 'bg-green-500' : 'bg-blue-300'} w-full`} >
-                        <label><input type="radio" name={question} id="" /> {option}</label>
+                        <label onClick={() => handleAnswer(option)}><input type="radio" name={question} id="" /> {option}</label>
                     </div>)
                 }
             </div>
