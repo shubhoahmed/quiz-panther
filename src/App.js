@@ -7,12 +7,14 @@ import QuizList from './components/QuizList/QuizList';
 import Statistics from './components/Statistics/Statistics';
 import Main from './layouts/Main';
 import { ToastContainer } from 'react-toastify';
+import NotFound from './components/NotFound/NotFound'
 
 function App() {
   const router = createBrowserRouter([
     {
       path: '/',
       element: <Main></Main>,
+      errorElement: <NotFound></NotFound>,
       children: [
         {
           path: '/',
