@@ -2,7 +2,7 @@
 ## Live Site Link [https://quiz-panther.netlify.app/](https://quiz-panther.netlify.app/)
 
 ## Short Description:
-QuizPanther is a website for practice a quiz.There are some routes name NavBar, Home, Statistics, Blog and Topic.
+QuizPanther is a website for practice a quiz.There are some routes name NavBar, Home, Statistics, Blog and Topic.Quiz, a contest in which participants test what they know by answering questions on one or more topics. The term quiz is a capacious one: it can refer to a single game consisting of just a few questions, or it can refer to a large-scale event involving dozens or hundreds of people.
 
 # Getting Started with Create React App
 

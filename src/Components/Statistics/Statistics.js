@@ -6,7 +6,7 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts'
 const Statistics = () => {
     const { data } = useLoaderData();
     return (
-        <div className='flex justify-center'>
+        <div className='flex justify-center mt-4 bg-yellow-200'>
 
             <div className='lg:block hidden'>
                 <LineChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
